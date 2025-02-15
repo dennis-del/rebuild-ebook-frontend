@@ -1,0 +1,1 @@
+export const serverUrl = 'https://rebuilding-e-book-backend.onrender.com'
