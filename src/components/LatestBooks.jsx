@@ -14,7 +14,7 @@ function LatestBooks() {
   useEffect(() => {
     const getBook = async () => {
       try {
-        const res = await axios.get("http://localhost:8000/book");
+        const res = await axios.get('https://rebuilding-e-book-backend.onrender.com/book');
         setBook(res.data);
       } catch (error) {
         console.log(error);
@@ -31,7 +31,7 @@ function LatestBooks() {
           Authorization: `Bearer ${token}`,
         },
       };
-      await axios.delete(`http://localhost:8000/book/${id}`, config);
+      await axios.delete(`https://rebuilding-e-book-backend.onrender.com/book/${id}`, config);
       setBook((prevBooks) => prevBooks.filter((book) => book._id !== id));
     } catch (error) {
       console.error('Error deleting book:', error);
@@ -54,7 +54,7 @@ function LatestBooks() {
         },
       };
 
-      const response = await axios.post('http://localhost:8000/book', newBook, config);
+      const response = await axios.post('https://rebuilding-e-book-backend.onrender.com/book', newBook, config);
       setBook((prevBooks) => [...prevBooks, response.data]);
       setIsModalOpen(false);
     } catch (error) {
@@ -85,7 +85,7 @@ function LatestBooks() {
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await axios.put(`http://localhost:8000/book/${updatedBook._id}`, updatedBook, config);
+      const response = await axios.put(`https://rebuilding-e-book-backend.onrender.com/book/${updatedBook._id}`, updatedBook, config);
       
       // Update the card in place
       setBook((prevBooks) => 

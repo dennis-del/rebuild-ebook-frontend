@@ -13,7 +13,7 @@ function Audiocards({ item, onDelete }) {
 
     const handleDeleteClick = async () => {
         try {
-            await fetch(`http://localhost:8000/audio/${item._id}`, {
+            await fetch(`https://rebuilding-e-book-backend.onrender.com/audio/${item._id}`, {
                 method: 'DELETE',
             });
             onDelete(item._id); // Notify parent component to remove the card

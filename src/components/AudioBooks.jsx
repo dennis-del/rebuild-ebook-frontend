@@ -10,7 +10,7 @@ function AudioBooks() {
     useEffect(() => {
         const getAudio = async () => {
             try {
-                const res = await axios.get('http://localhost:8000/audio');
+                const res = await axios.get('https://rebuilding-e-book-backend.onrender.com/audio');
                 console.log(res.data);
                 setAudio(res.data);
             } catch (error) {
@@ -26,7 +26,7 @@ function AudioBooks() {
 
     const handleAddAudio = async (newAudio) => {
         try {
-            const response = await axios.post('http://localhost:8000/audio', newAudio);
+            const response = await axios.post('https://rebuilding-e-book-backend.onrender.com/audio', newAudio);
             setAudio([...audio, response.data]);
             setIsModalOpen(false);
         } catch (error) {

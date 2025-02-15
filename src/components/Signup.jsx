@@ -5,7 +5,6 @@ import { useForm } from "react-hook-form"
 import axios from 'axios';
 import { toast } from 'react-hot-toast';
 
-
 function Signup() {
     const location = useLocation()
     const navigate = useNavigate()
@@ -23,7 +22,7 @@ function Signup() {
             Email:data.Email,
             Password:data.Password,
         }
-        await axios.post("http://localhost:8000/signup",userInfo)
+        await axios.post('https://rebuilding-e-book-backend.onrender.com/signup', userInfo)
         .then((res)=>{
             console.log(res.data);
             if(res.data){

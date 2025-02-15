@@ -28,7 +28,7 @@ function Cards({ item, onDelete, onSaveEdit }) {
   const handleDeleteClick = async () => {
     console.log(`Attempting to delete book with ID: ${item._id}`);
     try {
-      const response = await axios.delete(`http://localhost:8000/book/${item._id}`);
+      const response = await axios.delete(`https://rebuilding-e-book-backend.onrender.com/book/${item._id}`);
       if (response.status === 200) {
         console.log('Delete successful');
         onDelete(item._id);
@@ -57,7 +57,7 @@ function Cards({ item, onDelete, onSaveEdit }) {
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await axios.put(`http://localhost:8000/book/${item._id}`, updatedItem, config);
+      const response = await axios.put(`https://rebuilding-e-book-backend.onrender.com/book/${item._id}`, updatedItem, config);
       onSaveEdit(response.data);
       setIsModalOpen(false);
     } catch (error) {
